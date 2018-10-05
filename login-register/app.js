@@ -29,6 +29,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+//以下为所有页面配置路由
+app.use('/login',indexRouter);//登录页面
+app.use('/register',indexRouter);//注册页面
+app.use('/home',indexRouter);//主页页面
+app.use('/logout',indexRouter);//登出页面
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
